@@ -1,4 +1,4 @@
-# Darkwire.io
+# CryptNet
 
 [![CircleCI](https://circleci.com/gh/darkwire/darkwire.io.svg?style=svg)](https://circleci.com/gh/darkwire/darkwire.io)
 
@@ -6,13 +6,13 @@ Simple encrypted web chat. Powered by [socket.io](http://socket.io), the [web cr
 
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
 
-### Darkwire Server
+### CryptNet Server
 
-[Darkwire server](/server) is a Node.js application.
+[CryptNet server](/server) is a Node.js application.
 
-### Darkwire Web Client
+### CryptNet Web Client
 
-The Darkwire.io [web client](/client) is written in JavaScript with React JS and Redux.
+The CryptNet [web client](/client) is written in JavaScript with React JS and Redux.
 
 ### Development
 
@@ -90,7 +90,7 @@ You are able to use any of the enviroment variables available in `server/.env.di
 
 ### Security
 
-Please report any security issues to `hello@darkwire.io`.
+Please report any security issues to `coming soon`.
 
 ### How it works
 
@@ -124,7 +124,7 @@ The default transferable file size limit is 4MB, but can be changed in `.env` fi
 
 ## Sockets & Server
 
-Darkwire uses [socket.io](http://socket.io) to transmit encrypted information using secure [WebSockets](https://en.wikipedia.org/wiki/WebSocket) (WSS).
+CryptNet uses [socket.io](http://socket.io) to transmit encrypted information using secure [WebSockets](https://en.wikipedia.org/wiki/WebSocket) (WSS).
 
 Rooms are stored in memory on the server until all participants have left, at which point the room is destroyed. Only public keys are stored in server memory for the duration of the room's life.
 
