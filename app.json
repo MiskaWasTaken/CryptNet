@@ -6,7 +6,7 @@
     "chat",
     "privacy"
   ],
-  "website": "https://miska.chat",
+  "website": "https://cryptnet.me/",
   "repository": "https://github.com/MiskaWasTaken/CryptNet",
   "env": {
     "HEROKU_APP_NAME": {
@@ -46,7 +46,7 @@
       "value": "443"
     },
     "SITE_URL": {
-      "description": "Full URL of site. Example: https://darkwire.io",
+      "description": "https://cryptnet.me/",
       "required": false
     }
   },
