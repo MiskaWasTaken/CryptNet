@@ -3,12 +3,13 @@ import getStore from './store/index.js';
 
 export default class Socket {
   constructor(opts) {
-    const { roomId, socket, room, roomIdOriginal } = opts;
+    const { roomId, socket, room, roomIdOriginal, proxyOptions } = opts;
 
     this._roomId = roomId;
     this.socket = socket;
     this.roomIdOriginal = roomIdOriginal;
     this.room = room;
+    this.proxyOptions = proxyOptions;
     if (room.isLocked) {
       this.sendRoomLocked();
       return;
@@ -47,12 +48,12 @@ export default class Socket {
     });
   }
 
-  joinRoom(roomId, socket) {
+  joinRoom(roomId, socket, proxyOptions) {
     return new Promise((resolve, reject) => {
       if (getStore().hasSocketAdapter) {
         getIO().of('/').adapter.remoteJoin(socket.id);
       } else {
-        socket.join(roomId);
+        socket.join(roomId, proxyOptions);
         resolve();
       }
     });
