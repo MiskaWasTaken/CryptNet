@@ -96,10 +96,14 @@ if (clientDistDirectory) {
   app.use(async ctx => {
     setStaticFileHeaders(ctx);
     await koaSend(ctx, 'index.html', { root: clientDistDirectory });
+    console.log('Request URL:', ctx.url);
+    console.log('Request Headers:', ctx.headers);
   });
 } else {
   app.use(async ctx => {
     ctx.body = { ready: true };
+    console.log('Request URL:', ctx.url);
+    console.log('Request Headers:', ctx.headers);
   });
 }
 
