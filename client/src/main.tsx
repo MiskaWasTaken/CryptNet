@@ -47,7 +47,7 @@ const Main = () => {
 
 
 if (!window.crypto || !window.crypto.subtle) {
-  window.alert("You must access CryptNet from a secure HTTPS connection.")
+  window.alert("You must access CryptNet from a secure HTTPS connection. Please copy the following link and open it in a new tab: https://cryptnet.me/")
   throw new Error("You must access CryptNet from a secure HTTPS connection.")
 }
 
