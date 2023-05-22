@@ -14,6 +14,7 @@ import Socket from './socket.js';
 import mailer from './utils/mailer.js';
 import { pollForInactiveRooms } from './inactive_rooms.js';
 import getStore from './store/index.js';
+import { SocksAgentProxy } from 'socks-proxy-agent'
 
 dotenv.config();
 
@@ -30,6 +31,9 @@ const isReviewApp = /-pr-/.test(appName);
 const siteURL = process.env.SITE_URL;
 
 const store = getStore();
+
+const proxyHost = 'socks5h://localhost' 
+const proxyPort = 9050; 
 
 if ((siteURL || env === 'development') && !isReviewApp) {
   app.use(
@@ -99,9 +103,16 @@ if (clientDistDirectory) {
   });
 }
 
+const proxyAgent = new SocksAgentProxy({
+  host: proxyHost,
+  port: proxyPort,
+  protocol: 'socks5:',
+  socksVersion: 5,
+});
+
 const protocol = (process.env.PROTOCOL || 'http') === 'http' ? http : https;
 
-const httpServer = protocol.createServer(app.callback());
+const httpServer = protocol.createServer({agent: proxyAgent}, app.callback());
 
 const io = new Server(httpServer, {
   pingInterval: 20000,
