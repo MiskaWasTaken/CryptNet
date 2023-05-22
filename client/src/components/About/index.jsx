@@ -104,7 +104,7 @@ class About extends Component {
             with appropriate law enforcement authorities.
           </p>
           <p>
-            To report any content, email us at abuse[at]miska.live or submit the room ID below to report anonymously.
+            To report any content, email us at abuse[at]cryptnet.me or submit the room ID below to report anonymously.
           </p>
           <form onSubmit={this.handleReportAbuse.bind(this)}>
             {this.state.abuseReported && <div>Thank you!</div>}
@@ -142,7 +142,7 @@ class About extends Component {
           <h4>Acceptable Use Policy</h4>
           <p>
             This Acceptable Use Policy (this “Policy”) describes prohibited uses of the web services offered by CryptNet
-            and its affiliates (the “Services”) and the website located at https://miska.live (the “CryptNet Site”).
+            and its affiliates (the “Services”) and the website located at https://cryptnet.me/ (the “CryptNet Site”).
             The examples described in this Policy are not exhaustive. We may modify this Policy at any time by posting a
             revised version on the CryptNet Site. By using the Services or accessing the CryptNet Site, you agree to the
             latest version of this Policy. If you violate the Policy or authorize or help others to do so, we may
@@ -271,7 +271,7 @@ class About extends Component {
           <p>Last updated: December 11, 2017</p>
           <p>
             Please read these Terms of Service ("Terms", "Terms of Service") carefully before using the
-            https://miska.live website (the "Service") operated by CryptNet ("us", "we", or "our").
+            https://cryptnet.me/ website (the "Service") operated by CryptNet ("us", "we", or "our").
           </p>
           <p>
             Your access to and use of the Service is conditioned on your acceptance of and compliance with these Terms.
@@ -330,7 +330,7 @@ class About extends Component {
           <p>
             Please also note that <strong>ALL CHATROOMS</strong> are public. &nbsp;Anyone can guess your room URL. If
             you need a more-private room, use the lock feature or set the URL manually by entering a room ID after
-            &quot;miska.live/&quot;.
+            &quot;cryptnet.me/&quot;.
           </p>
           <br />
           <strong>No Warranties; Exclusion of Liability; Indemnification</strong>
@@ -396,12 +396,12 @@ class About extends Component {
             the revised terms. If you do not agree to the new terms, please stop using the Service.
           </p>
           <strong>Contact Us</strong>
-          <p>If you have any questions about these Terms, please contact us at hello[at]miska.live.</p>
+          <p>If you have any questions about these Terms, please contact us at hello[at]cryptnet.me.</p>
         </section>
 
         <section id="contact">
           <h4>Contact</h4>
-          <p>Questions/comments? Email us at hello[at]miska.live</p>
+          <p>Questions/comments? Email us at hello[at]cryptnet.me</p>
           <p>
             Found a bug or want a new feature?{' '}
             <a href="https://github.com/MiskaWasTaken/cryptnet/issues" target="_blank" rel="noopener noreferrer">

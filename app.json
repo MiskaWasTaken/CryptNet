@@ -7,7 +7,7 @@
     "privacy"
   ],
   "website": "https://miska.chat",
-  "repository": "https://github.com/MiskaWasTaken/CryptNet.io",
+  "repository": "https://github.com/MiskaWasTaken/CryptNet",
   "env": {
     "HEROKU_APP_NAME": {
       "required": false

@@ -1,5 +1,5 @@
 {
-  "name": "cryptnet.io",
+  "name": "cryptnet",
   "version": "alpha(build-1)",
   "description": "encrypted web chat",
   "main": "index.js",

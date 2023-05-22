@@ -1,4 +1,4 @@
-# Darkwire.io
+# CryptNet
 
 [![CircleCI](https://circleci.com/gh/darkwire/darkwire.io.svg?style=svg)](https://circleci.com/gh/darkwire/darkwire.io)
 
@@ -6,13 +6,13 @@ Simple encrypted web chat. Powered by [socket.io](http://socket.io), the [web cr
 
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
 
-### Darkwire Server
+### CryptNet Server
 
-[Darkwire server](/server) is a Node.js application.
+[CryptNet server](/server) is a Node.js application.
 
-### Darkwire Web Client
+### CryptNet Web Client
 
-The Darkwire.io [web client](/client) is written in JavaScript with React JS and Redux.
+The CryptNet [web client](/client) is written in JavaScript with React JS and Redux.
 
 ### Development
 
@@ -90,11 +90,11 @@ You are able to use any of the enviroment variables available in `server/.env.di
 
 ### Security
 
-Please report any security issues to `hello@darkwire.io`.
+Please report any security issues to `coming soon`.
 
 ### How it works
 
-Darkwire uses a combination of asymmetric encryption (RSA-OAEP), symmetric session keys (AES-CBC) and signing keys (HMAC) for security.
+CryptNet uses a combination of asymmetric encryption (RSA-OAEP), symmetric session keys (AES-CBC) and signing keys (HMAC) for security.
 
 Here's an overview of a chat between Alice and Bob (also applies to group chats):
 
@@ -110,11 +110,11 @@ Group chats work the same way because in step 5 we encrypt keys with everyone's 
 
 ### [Man-in-the-middle attacks](https://en.wikipedia.org/wiki/Man-in-the-middle_attack)
 
-Darkwire does not provide any guarantee that the person you're communicating with is who you think they are. Authentication functionality may be incorporated in future versions.
+CryptNet does not provide any guarantee that the person you're communicating with is who you think they are. Authentication functionality may be incorporated in future versions.
 
 ## File Transfer
 
-Darkwire encodes documents into base64 using [btoa](https://developer.mozilla.org/en-US/docs/Web/API/WindowBase64/btoa) and is encrypted the same way chat messages are.
+CryptNet encodes documents into base64 using [btoa](https://developer.mozilla.org/en-US/docs/Web/API/WindowBase64/btoa) and is encrypted the same way chat messages are.
 
 1. When a file is "uploaded", the document is encoded on the client and the server recieves the encrypted base64 string.
 2. The server sends the encrypted base64 string to clients in the same chat room.
