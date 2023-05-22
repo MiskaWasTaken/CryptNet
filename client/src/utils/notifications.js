@@ -1,12 +1,14 @@
 import beepFile from '@/audio/beep.mp3';
+import PushNotification from 'react-native-push-notification';
 
 const showNotification = (title, message) => {
-  const notifBody = {
-    body: message,
+  PushNotification.localNotification({
+    title: title,
+    message: message,
+    playSound: false, // We will handle our own sounds
     tag: 'cryptnet',
-    silent: true, // we play our own sounds
-  };
-
+  });
+};
   if ('Notification' in window) {
     const notification = new Notification(title, notifBody);
     const handleVisibilityChange = () => {
@@ -24,26 +26,13 @@ const showNotification = (title, message) => {
     document.addEventListener('visibilitychange', handleVisibilityChange);
   } else {
     alert('This browser does not support desktop notification');
-  }
-};
+  };
 
 export const notify = (title, content = '') => {
-  if ('Notification' in window) {
-    // Let's check whether notification permissions have already been granted
-    if (Notification.permission === 'granted') {
-      // If it's okay, let's create a notification
-      showNotification(title, content);
-    } else if (Notification.permission !== 'denied') {
-      // Otherwise, we need to ask the user for permission
-      Notification.requestPermission().then(function (permission) {
-        // If the user accepts, let's create a notification
-        if (permission === 'granted') {
-          showNotification(title, content);
-        }
-      });
-    }
+  if (!PushNotification) {
+    alert('This device does not support notifications');
   } else {
-    alert('This browser does not support desktop notification');
+    showNotification(title, content);
   }
 };
 
