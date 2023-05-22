@@ -14,7 +14,7 @@ import Socket from './socket.js';
 import mailer from './utils/mailer.js';
 import { pollForInactiveRooms } from './inactive_rooms.js';
 import getStore from './store/index.js';
-import { SocksAgentProxy } from 'socks-proxy-agent'
+import SocksAgentProxy from 'socks-proxy-agent'
 
 dotenv.config();
 
