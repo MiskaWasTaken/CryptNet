@@ -103,10 +103,6 @@ class Home extends Component {
               togglePersistenceEnabled={this.props.togglePersistenceEnabled}
               soundIsEnabled={this.props.soundIsEnabled}
               persistenceIsEnabled={this.props.persistenceIsEnabled}
-              toggleNotificationEnabled={this.props.toggleNotificationEnabled}
-              toggleNotificationAllowed={this.props.toggleNotificationAllowed}
-              notificationIsEnabled={this.props.notificationIsEnabled}
-              notificationIsAllowed={this.props.notificationIsAllowed}
               setLanguage={this.props.setLanguage}
               language={this.props.language}
               translations={this.props.translations}
@@ -254,10 +250,6 @@ Home.propTypes = {
   persistenceIsEnabled: PropTypes.bool.isRequired,
   toggleSoundEnabled: PropTypes.func.isRequired,
   togglePersistenceEnabled: PropTypes.func.isRequired,
-  notificationIsEnabled: PropTypes.bool.isRequired,
-  notificationIsAllowed: PropTypes.bool,
-  toggleNotificationEnabled: PropTypes.func.isRequired,
-  toggleNotificationAllowed: PropTypes.func.isRequired,
   toggleSocketConnected: PropTypes.func.isRequired,
   socketConnected: PropTypes.bool.isRequired,
   sendUnencryptedMessage: PropTypes.func.isRequired,

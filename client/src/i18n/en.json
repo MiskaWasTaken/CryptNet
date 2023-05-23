@@ -33,9 +33,6 @@
   ],
   "sound": "Sound",
   "persistence": "Persist configuration",
-  "newMessageNotification": "New message notification",
-  "desktopNotification": "Desktop Notification",
-  "desktopNotificationBlocked": "Desktop notifications have been denied",
   "welcomeModalCTA": "Ok",
   "lockedRoomHeader": "This room is locked",
   "helpTranslate": "Help us translate CryptNet!"

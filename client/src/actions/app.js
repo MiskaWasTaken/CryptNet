@@ -19,14 +19,6 @@ export const togglePersistenceEnabled = payload => async dispatch => {
   dispatch({ type: 'TOGGLE_PERSISTENCE_ENABLED', payload });
 };
 
-export const toggleNotificationEnabled = payload => async dispatch => {
-  dispatch({ type: 'TOGGLE_NOTIFICATION_ENABLED', payload });
-};
-
-export const toggleNotificationAllowed = payload => async dispatch => {
-  dispatch({ type: 'TOGGLE_NOTIFICATION_ALLOWED', payload });
-};
-
 export const toggleSocketConnected = payload => async dispatch => {
   dispatch({ type: 'TOGGLE_SOCKET_CONNECTED', payload });
 };

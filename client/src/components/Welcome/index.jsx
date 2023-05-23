@@ -19,14 +19,18 @@ class Welcome extends Component {
             <li>Support on all modern browsers (Chrome, Firefox, Safari, Safari iOS, Android)</li>
             <li>Slash commands (/nick, /me, /clear)</li>
             <li>Room owners can lock the room, preventing anyone else from joining</li>
-            <li>Full encryption with the latest security</li>
-            <li>No data is stored, all keys get destroyed after use</li>
+            <li>AES"256" encryption method</li>
+            <li>No data or messages are stored, all keys get destroyed after use</li>
             <li>Messages are untracable using network spoofing tools</li>
-            <li>Send files up to 4 MB</li>
+            <li>If you do not see a "diconnected" header, your ip is hidden and cannot be traced by your school or ISP</li>
+            <li>Send files up to 20 MB</li>
+            <li><strong>APPLE USERS READ BELOW</strong></li>
+            <li>You cannot directly upload photos from camera, CryptNet will kick you out of the room</li>
+            <li>Please take a photo from the camera app and upload it</li>
           </ul>
           <div>
             You can learn more{' '}
-            <a href="https://github.com/MiskaWasTaken/CryptNet.io" target="_blank" rel="noopener noreferrer">
+            <a href="https://github.com/MiskaWasTaken/CryptNet" target="_blank" rel="noopener noreferrer">
               here
             </a>
             .
