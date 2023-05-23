@@ -9,8 +9,6 @@ const initialState = {
   unreadMessageCount: 0,
   soundIsEnabled: true,
   persistenceIsEnabled: false,
-  notificationIsEnabled: true,
-  notificationIsAllowed: null,
   socketConnected: false,
   language,
   translations: getTranslations(language),
@@ -55,16 +53,6 @@ const app = (receivedState, action) => {
       return {
         ...state,
         persistenceIsEnabled: action.payload,
-      };
-    case 'TOGGLE_NOTIFICATION_ENABLED':
-      return {
-        ...state,
-        notificationIsEnabled: action.payload,
-      };
-    case 'TOGGLE_NOTIFICATION_ALLOWED':
-      return {
-        ...state,
-        notificationIsAllowed: action.payload,
       };
     case 'TOGGLE_SOCKET_CONNECTED':
       return {

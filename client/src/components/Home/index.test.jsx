@@ -6,9 +6,9 @@ import Modal from 'react-modal';
 import { expect, vi, describe, beforeEach, afterEach, it } from 'vitest';
 
 import configureStore from '@/store';
-import { toggleWindowFocus, toggleNotificationEnabled, toggleSoundEnabled } from '@/actions/app';
+import { toggleWindowFocus, toggleSoundEnabled } from '@/actions/app';
 import { receiveEncryptedMessage } from '@/actions/encrypted_messages';
-import { notify, beep } from '@/utils/notifications';
+import { beep } from '@/utils/notifications';
 
 import { ConnectedHome } from './';
 
@@ -91,16 +91,6 @@ vi.mock('@/utils/notifications', () => {
   };
 });
 
-describe('Connected Home component', () => {
-  beforeEach(() => {
-    global.Notification = {
-      permission: 'granted',
-    };
-  });
-
-  afterEach(() => {
-    delete global.Notification;
-  });
 
   it('should display', () => {
     const { asFragment } = render(
@@ -111,50 +101,6 @@ describe('Connected Home component', () => {
 
     expect(asFragment()).toMatchSnapshot();
   });
-
-  it('should set notification', () => {
-    render(
-      <Provider store={store}>
-        <ConnectedHome match={{ params: { roomId: 'roomTest' } }} userId="testUserId" />
-      </Provider>,
-    );
-
-    expect(store.getState().app.notificationIsAllowed).toBe(true);
-    expect(store.getState().app.notificationIsEnabled).toBe(true);
-
-    global.Notification = {
-      permission: 'denied',
-    };
-
-    render(
-      <Provider store={store}>
-        <ConnectedHome match={{ params: { roomId: 'roomTest' } }} userId="testUserId" />
-      </Provider>,
-    );
-
-    expect(store.getState().app.notificationIsAllowed).toBe(false);
-
-    global.Notification = {
-      permission: 'default',
-    };
-
-    render(
-      <Provider store={store}>
-        <ConnectedHome match={{ params: { roomId: 'roomTest' } }} userId="testUserId" />
-      </Provider>,
-    );
-
-    expect(store.getState().app.notificationIsAllowed).toBe(null);
-  });
-
-  it('should send notifications', async () => {
-    Modal.prototype.getSnapshotBeforeUpdate = vi.fn().mockReturnValue(null);
-    const { rerender } = render(
-      <Provider store={store}>
-        <ConnectedHome match={{ params: { roomId: 'roomTest' } }} userId="testUserId" roomId={'testId'} />
-      </Provider>,
-    );
-
     // Test with window focused
     await receiveEncryptedMessage({
       type: 'TEXT_MESSAGE',
@@ -168,7 +114,6 @@ describe('Connected Home component', () => {
     );
 
     expect(store.getState().app.unreadMessageCount).toBe(0);
-    expect(notify).not.toHaveBeenCalled();
     expect(beep.play).not.toHaveBeenCalled();
     expect(Tinycon.setBubble).not.toHaveBeenCalled();
 
@@ -185,13 +130,9 @@ describe('Connected Home component', () => {
       </Provider>,
     );
     expect(store.getState().app.unreadMessageCount).toBe(1);
-    expect(notify).toHaveBeenLastCalledWith('sender said:', 'new message');
     expect(beep.play).toHaveBeenLastCalledWith();
     expect(Tinycon.setBubble).toHaveBeenLastCalledWith(1);
 
-    // Test with sound and notification disabled
-    await toggleNotificationEnabled(false)(store.dispatch);
-    await toggleSoundEnabled(false)(store.dispatch);
     await receiveEncryptedMessage({
       type: 'TEXT_MESSAGE',
       payload: {},
@@ -204,8 +145,6 @@ describe('Connected Home component', () => {
     );
 
     expect(store.getState().app.unreadMessageCount).toBe(2);
-    expect(notify).toHaveBeenCalledTimes(1);
     expect(beep.play).toHaveBeenCalledTimes(1);
     expect(Tinycon.setBubble).toHaveBeenLastCalledWith(2);
-  });
-});
+  

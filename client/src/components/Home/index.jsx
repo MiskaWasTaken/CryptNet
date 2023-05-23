@@ -9,8 +9,6 @@ import {
   toggleWindowFocus,
   toggleSoundEnabled,
   togglePersistenceEnabled,
-  toggleNotificationEnabled,
-  toggleNotificationAllowed,
   toggleSocketConnected,
   receiveUnencryptedMessage,
   sendUnencryptedMessage,

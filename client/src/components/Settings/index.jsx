@@ -15,17 +15,6 @@ class Settings extends Component {
     this.props.togglePersistenceEnabled(!this.props.persistenceIsEnabled);
   }
 
-  handleNotificationToggle() {
-    Notification.requestPermission().then(permission => {
-      if (permission === 'granted') {
-        this.props.toggleNotificationEnabled(!this.props.notificationIsEnabled);
-        this.props.toggleNotificationAllowed(true);
-      }
-      if (permission === 'denied') {
-        this.props.toggleNotificationAllowed(false);
-      }
-    });
-  }
 
   handleLanguageChange(evt) {
     const language = evt.target.value;
@@ -35,55 +24,6 @@ class Settings extends Component {
   render() {
     return (
       <div className={classes.styles}>
-        <section>
-          <h4>
-            <T path="newMessageNotification" />
-          </h4>
-          <form>
-            <div className="form-check">
-              <label className="form-check-label" htmlFor="sound-control">
-                <input
-                  id="sound-control"
-                  onChange={this.handleSoundToggle.bind(this)}
-                  className="form-check-input"
-                  type="checkbox"
-                  checked={this.props.soundIsEnabled}
-                />
-                <T path="sound" />
-              </label>
-            </div>
-            <div className="form-check">
-              <label className="form-check-label" htmlFor="notif-control">
-                {this.props.notificationIsAllowed !== false && (
-                  <>
-                    <input
-                      id="notif-control"
-                      onChange={this.handleNotificationToggle.bind(this)}
-                      className="form-check-input"
-                      type="checkbox"
-                      checked={this.props.notificationIsEnabled}
-                      disabled={this.props.notificationIsAllowed === false} // Important to keep '=== false' here
-                    />
-                    <T path="desktopNotification" />
-                  </>
-                )}
-                {this.props.notificationIsAllowed === false && <T path="desktopNotificationBlocked" />}
-              </label>
-            </div>
-            <div className="form-check">
-              <label className="form-check-label" htmlFor="persistence-control">
-                <input
-                  id="persistence-control"
-                  onChange={this.handlePersistenceToggle.bind(this)}
-                  className="form-check-input"
-                  type="checkbox"
-                  checked={this.props.persistenceIsEnabled}
-                />
-                <T path="persistence" />
-              </label>
-            </div>
-          </form>
-        </section>
 
         <section>
           <h4 className="mb-3">
@@ -187,10 +127,6 @@ Settings.propTypes = {
   soundIsEnabled: PropTypes.bool.isRequired,
   persistenceIsEnabled: PropTypes.bool.isRequired,
   toggleSoundEnabled: PropTypes.func.isRequired,
-  notificationIsEnabled: PropTypes.bool.isRequired,
-  notificationIsAllowed: PropTypes.bool,
-  toggleNotificationEnabled: PropTypes.func.isRequired,
-  toggleNotificationAllowed: PropTypes.func.isRequired,
   roomId: PropTypes.string.isRequired,
   setLanguage: PropTypes.func.isRequired,
   translations: PropTypes.object.isRequired,
