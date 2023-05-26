@@ -56,12 +56,12 @@ class Welcome extends Component {
         </div>
 
         {/* Autoplay video */}
-        <div style={{ position: 'relative', overflow: 'hidden'}}>
-        <video width="520" height="240" controls loop>
+        <center>
+        <video width="520" height="240" autoPlay controls loop muted>
           <source src={vid} type="video/mp4" className="video" />
           There was supposed to be a video here but your browser doesnt support it, consider upgrading.
         </video>
-        </div>
+        </center>
       </div>
     );
   }
