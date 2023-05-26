@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import RoomLink from '@/components/RoomLink';
+import vid from '@/img/video.mp4';
 
 class Welcome extends Component {
   constructor(props) {
@@ -21,11 +22,11 @@ class Welcome extends Component {
             <li>Room owners can lock the room, preventing anyone else from joining</li>
             <li>AES"256" encryption method</li>
             <li>No data or messages are stored, all keys get destroyed after use</li>
-            <li>Messages are untracable using network spoofing tools</li>
-            <li>If you do not see a "diconnected" header, your ip is hidden and cannot be traced by your school or ISP</li>
+            <li>Messages are untraceable using network spoofing tools</li>
+            <li>If you do not see a "disconnected" header, your IP is hidden and cannot be traced by your school or ISP</li>
             <li>Send files up to 20 MB</li>
             <li><strong>APPLE USERS READ BELOW</strong></li>
-            <li>You cannot directly upload photos from camera, CryptNet will kick you out of the room</li>
+            <li>You cannot directly upload photos from the camera, CryptNet will kick you out of the room</li>
             <li>Please take a photo from the camera app and upload it</li>
           </ul>
           <div>
@@ -39,11 +40,44 @@ class Welcome extends Component {
         <br />
         <p className="mb-2">Others can join this room using the following URL:</p>
         <RoomLink roomId={this.props.roomId} translations={this.props.translations} />
+
+                {/* Synthesia video */}
+                <div style={{ position: 'relative', overflow: 'hidden', paddingTop: '56.25%' }}>
+          <iframe
+            src="https://share.synthesia.io/embeds/videos/4a2e8f07-41b5-420b-b754-1eb241034a0b"
+            loading="lazy"
+            title="Synthesia video player - Your AI video"
+            allow="encrypted-media; fullscreen;"
+            style={{
+              position: 'absolute',
+              width: '100%',
+              height: '100%',
+              top: 0,
+              left: 0,
+              border: 'none',
+              padding: 0,
+              margin: 0,
+              overflow: 'hidden',
+            }}
+            allowFullScreen
+            autoPlay
+            muted
+          ></iframe>
+        </div>
+
         <div className="react-modal-footer">
           <button className="btn btn-primary btn-lg" onClick={this.props.close}>
             {this.props.translations.welcomeModalCTA}
           </button>
         </div>
+
+        {/* Autoplay video */}
+        <center>
+        <video width="520" height="240" autoPlay controls loop muted>
+          <source src={vid} type="video/mp4" className="video" />
+          There was supposed to be a video here but your browser doesnt support it, consider upgrading.
+        </video>
+        </center>
       </div>
     );
   }
