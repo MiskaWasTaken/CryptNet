@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import RoomLink from '@/components/RoomLink';
 import vid from '@/img/video.mp4';
+import int from '@/img/intro.mp4';
 
 class Welcome extends Component {
   constructor(props) {
@@ -41,30 +42,13 @@ class Welcome extends Component {
         <p className="mb-2">Others can join this room using the following URL:</p>
         <RoomLink roomId={this.props.roomId} translations={this.props.translations} />
 
-                {/* Synthesia video */}
-                <div style={{ position: 'relative', overflow: 'hidden', paddingTop: '56.25%' }}>
-          <iframe
-            src="https://share.synthesia.io/embeds/videos/4a2e8f07-41b5-420b-b754-1eb241034a0b"
-            loading="lazy"
-            title="Synthesia video player - Your AI video"
-            allow="encrypted-media; fullscreen;"
-            style={{
-              position: 'absolute',
-              width: '100%',
-              height: '100%',
-              top: 0,
-              left: 0,
-              border: 'none',
-              padding: 0,
-              margin: 0,
-              overflow: 'hidden',
-            }}
-            allowFullScreen
-            autoPlay
-            muted
-          ></iframe>
+        {/* Synthesia video */}
+        <div style={{ position: 'relative', overflow: 'hidden'}}>
+        <video width="520" height="240" controls loop>
+          <source src={int} type="video/mp4" className="intro" />
+          There was supposed to be a video here but your browser doesnt support it, consider upgrading.
+        </video>
         </div>
-
         <div className="react-modal-footer">
           <button className="btn btn-primary btn-lg" onClick={this.props.close}>
             {this.props.translations.welcomeModalCTA}
