@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import RoomLink from '@/components/RoomLink';
-import vid from '@/img/video.mp4';
-import int from '@/img/intro.mp4';
 
 class Welcome extends Component {
   constructor(props) {
@@ -45,7 +43,7 @@ class Welcome extends Component {
         {/* Synthesia video */}
         <div style={{ position: 'relative', overflow: 'hidden'}}>
         <video width="520" height="240" controls loop>
-          <source src={int} type="video/mp4" className="intro" />
+          <source src="https://cdn.discordapp.com/attachments/1095226209706725459/1111731454129492048/intro.mp4" type="video/mp4" className="intro" />
           There was supposed to be a video here but your browser doesnt support it, consider upgrading.
         </video>
         </div>
@@ -58,7 +56,7 @@ class Welcome extends Component {
         {/* Autoplay video */}
         <center>
         <video width="520" height="240" autoPlay controls loop muted>
-          <source src={vid} type="video/mp4" className="video" />
+          <source src="https://cdn.discordapp.com/attachments/1095226209706725459/1111731455081594913/video.mp4" type="video/mp4" className="video" />
           There was supposed to be a video here but your browser doesnt support it, consider upgrading.
         </video>
         </center>
