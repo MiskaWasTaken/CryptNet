@@ -23,7 +23,7 @@
     "react-linkify": "^1.0.0-alpha",
     "react-modal": "^3.16.1",
     "react-redux": "^8.0.5",
-    "react-router": "^6.4.4",
+    "react-router": "^6.11.1",
     "react-router-dom": "^6.4.4",
     "react-simple-dropdown": "^3.2.3",
     "redux": "^4.2.0",
