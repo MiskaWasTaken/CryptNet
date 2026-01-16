@@ -477,10 +477,10 @@
     "@nodelib/fs.scandir" "2.1.5"
     fastq "^1.6.0"
 
-"@remix-run/router@1.0.4":
-  version "1.0.4"
-  resolved "https://registry.yarnpkg.com/@remix-run/router/-/router-1.0.4.tgz#cbfbec6735711e7c2fc93b9b40adf70ef5a39990"
-  integrity sha512-gTL8H5USTAKOyVA4xczzDJnC3HMssdFa3tRlwBicXynx9XfiXwneHnYQogwSKpdCkjXISrEKSTtX62rLpNEVQg==
+"@remix-run/router@1.23.2":
+  version "1.23.2"
+  resolved "https://registry.yarnpkg.com/@remix-run/router/-/router-1.23.2.tgz#156c4b481c0bee22a19f7924728a67120de06971"
+  integrity sha512-Ic6m2U/rMjTkhERIa/0ZtXJP17QUi2CbWE7cqx4J58M8aA3QTfW+2UlQ4psvTX9IO1RfNVhK3pcpdjej7L+t2w==
 
 "@sinclair/typebox@^0.24.1":
   version "0.24.51"
@@ -2738,20 +2738,20 @@ react-refresh@^0.14.0:
   resolved "https://registry.yarnpkg.com/react-refresh/-/react-refresh-0.14.0.tgz#4e02825378a5f227079554d4284889354e5f553e"
   integrity sha512-wViHqhAd8OHeLS/IRMJjTSDHF3U9eWi62F/MledQGPdJGDhodXJ9PBLNGr6WWL7qlH12Mt3TyTpbS+hGXMjCzQ==
 
-react-router-dom@^6.4.4:
-  version "6.4.4"
-  resolved "https://registry.yarnpkg.com/react-router-dom/-/react-router-dom-6.4.4.tgz#4271ec66333c440d1754477e4e6a3a5acb5487f8"
-  integrity sha512-0Axverhw5d+4SBhLqLpzPhNkmv7gahUwlUVIOrRLGJ4/uwt30JVajVJXqv2Qr/LCwyvHhQc7YyK1Do8a9Jj7qA==
+react-router-dom@^6.30.3:
+  version "6.30.3"
+  resolved "https://registry.yarnpkg.com/react-router-dom/-/react-router-dom-6.30.3.tgz#42ae6dc4c7158bfb0b935f162b9621b29dddf740"
+  integrity sha512-pxPcv1AczD4vso7G4Z3TKcvlxK7g7TNt3/FNGMhfqyntocvYKj+GCatfigGDjbLozC4baguJ0ReCigoDJXb0ag==
   dependencies:
-    "@remix-run/router" "1.0.4"
-    react-router "6.4.4"
+    "@remix-run/router" "1.23.2"
+    react-router "6.30.3"
 
-react-router@6.4.4, react-router@^6.4.4:
-  version "6.4.4"
-  resolved "https://registry.yarnpkg.com/react-router/-/react-router-6.4.4.tgz#8e7794f55ccc7050cb03937c87ff3720ce9f8b60"
-  integrity sha512-SA6tSrUCRfuLWeYsTJDuriRqfFIsrSvuH7SqAJHegx9ZgxadE119rU8oOX/rG5FYEthpdEaEljdjDlnBxvfr+Q==
+react-router@6.30.3, react-router@^6.30.3:
+  version "6.30.3"
+  resolved "https://registry.yarnpkg.com/react-router/-/react-router-6.30.3.tgz#994b3ccdbe0e81fe84d4f998100f62584dfbf1cf"
+  integrity sha512-XRnlbKMTmktBkjCLE8/XcZFlnHvr2Ltdr1eJX4idL55/9BbORzyZEaIkBFDhFGCEWBBItsVrDxwx3gnisMitdw==
   dependencies:
-    "@remix-run/router" "1.0.4"
+    "@remix-run/router" "1.23.2"
 
 react-simple-dropdown@^3.2.3:
   version "3.2.3"
